@@ -1,0 +1,38 @@
+import java.util.Scanner;
+public class simplecalculator {
+
+	public static void main(String[] args) {
+try(Scanner sc = new Scanner(System.in))
+{
+			System.out.println("Enter a number : ");
+			double a=sc.nextDouble();
+			float b=(float)a+22.1f; //Type Casting
+			System.out.println("Choose an Operation (+,-,*,/) : ");
+			char ch = sc.next().charAt(0);
+			operation(a,b,ch);
+		}
+		
+	}
+	public static double operation(double a,float b,char ch) {
+		double res = 0;
+        // addition
+        if (ch == '+') {
+            res = a + b;
+        }
+     // subtraction
+        else if (ch == '-') {
+            res = a - b;
+        }
+     // multiplication
+        else if (ch == '*') {
+            res = a * b;
+        }
+      // Division
+        else if (ch == '/') {
+            res = a / b;
+        }
+
+        System.out.println("Result is : " + res);
+        return res;
+	}
+}
