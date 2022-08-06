@@ -1,0 +1,35 @@
+import java.util.*;
+import java.util.ArrayList;
+import java.util.regex.*;
+public class emailvalidation {
+
+	public static void main(String[] args) {
+		
+		    ArrayList<String> emailID = new ArrayList<String>();
+		        
+		        emailID.add("abdul.kalam@gmail.com");
+		        emailID.add("daisy.kelly@gmail.com");
+		        emailID.add("god.gift@gmail.com");
+		        emailID.add("gksk.skgk@gmail.com");
+		        emailID.add("keerthu.sundar@gmail.com");
+		        emailID.add("vijay.chandra@gmail.com");
+		        emailID.add("karthik.suresh@gmail.com");
+		        emailID.add("gokul.krishnan@gmail.com");
+		        emailID.add("gkee.skee@gmail.com");
+		        emailID.add("xyz.abc@gmail.com");
+		        
+		        String searchEmail;
+		        System.out.println("E-mail: ");
+		        Scanner scanner = new Scanner(System.in);
+		        searchEmail = scanner.nextLine();
+		        String regex = "^(.+)@(.+)$";
+		        Matcher matcher = Pattern.compile(regex).matcher(searchEmail);
+		        if (matcher.matches() && emailID.stream().anyMatch(mail -> mail.equals(searchEmail))) {
+		            System.out.println(searchEmail + " is found");
+		        } else {
+		            System.out.println(searchEmail + " is not found");
+		        }
+
+			}
+
+		}
